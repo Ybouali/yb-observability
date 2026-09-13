@@ -1,0 +1,4 @@
+database:
+  host: ${POSTGRES_HOST}
+  credentials:
+    user: ${POSTGRES_USER}

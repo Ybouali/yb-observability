@@ -1,0 +1,3 @@
+application:
+  name: ${APP_NAME}
+  environment: ${ENVIRONMENT}

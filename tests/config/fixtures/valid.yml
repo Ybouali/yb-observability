@@ -1,0 +1,9 @@
+application:
+  name: Example Application
+  environment: development
+  debug: true
+  version: 0.1.0
+
+database:
+  host: localhost
+  port: 5432
