@@ -4,54 +4,47 @@ version = "0.1.0"
 description = "Reusable Python infrastructure for application configuration and observability."
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
-license = { file = "LICENSE" }
+license = "MIT"
 authors = [
     { name = "Yassine Bouali" },
+]
+
+keywords = [
+    "configuration",
+    "logging",
+    "observability",
+    "python",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Logging",
 ]
 dependencies = [
     "loguru>=0.7.3,<1.0.0",
     "pyyaml>=6.0,<7.0",
 ]
 
-[build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/yb_observability"]
+[project.urls]
+Homepage = "https://github.com/Ybouali/yb-observability"
+Repository = "https://github.com/Ybouali/yb-observability"
+Issues = "https://github.com/Ybouali/yb-observability/issues"
+Changelog = "https://github.com/Ybouali/yb-observability/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 dev = [
-    "pyright>=1.1.411,<2.0.0",
-    "pytest>=8.0,<10.0",
-    "pytest-asyncio>=0.24,<2.0",
-    "ruff>=0.12,<1.0",
+    "pyright>=1.1.414,<2.0.0",
+    "pytest>=9.1.1,<10.0.0",
+    "pytest-asyncio>=1.4.0,<2.0.0",
+    "ruff>=0.16.7,<1.0.0",
 ]
 
-[tool.pyright]
-include = ["src", "tests"]
-extraPaths = ["src"]
-typeCheckingMode = "standard"
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-asyncio_mode = "auto"
-
-[tool.ruff]
-line-length = 88
-target-version = "py314"
-
-[tool.ruff.lint]
-select = [
-    "E",
-    "F",
-    "I",
-    "B",
-    "UP",
-    "SIM",
-    "C4",
-]
-
-[tool.ruff.format]
-quote-style = "double"
-indent-style = "space"
+[tool.setuptools.packages.find]
+where = ["src"]

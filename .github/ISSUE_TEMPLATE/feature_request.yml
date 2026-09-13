@@ -1,0 +1,47 @@
+name: Feature request
+description: Suggest an improvement or new capability for yb-observability
+title: "[Feature]: "
+labels:
+
+* enhancement
+  body:
+
+* type: markdown
+  attributes:
+  value: |
+  Thanks for helping improve yb-observability.
+
+  ```
+  Please describe the problem or use case first, rather than only proposing an implementation.
+  ```
+
+* type: textarea
+  id: problem
+  attributes:
+  label: Problem or use case
+  description: What problem would this feature solve, and who would benefit from it?
+  placeholder: Describe the problem or use case.
+  validations:
+  required: true
+
+* type: textarea
+  id: proposed-solution
+  attributes:
+  label: Proposed solution
+  description: Describe the behavior or capability you would like to see.
+  placeholder: What would you like yb-observability to do?
+  validations:
+  required: true
+
+* type: textarea
+  id: alternatives
+  attributes:
+  label: Alternatives considered
+  description: Describe any alternative approaches or workarounds you have considered.
+  placeholder: What alternatives or workarounds did you try?
+
+* type: textarea
+  id: additional-context
+  attributes:
+  label: Additional context
+  description: Add examples, references, or other information that may help evaluate the request.

@@ -1,0 +1,95 @@
+name: Bug report
+description: Report a reproducible problem with yb-observability
+title: "[Bug]: "
+labels:
+
+* bug
+  body:
+
+* type: markdown
+  attributes:
+  value: |
+  Thanks for taking the time to report a bug.
+
+  ```
+  Please provide enough information for us to reproduce and investigate the problem.
+  ```
+
+* type: input
+  id: version
+  attributes:
+  label: yb-observability version
+  description: Which version of yb-observability are you using?
+  placeholder: "0.1.0"
+  validations:
+  required: true
+
+* type: input
+  id: python-version
+  attributes:
+  label: Python version
+  description: Which Python version are you using?
+  placeholder: "3.14.7"
+  validations:
+  required: true
+
+* type: input
+  id: operating-system
+  attributes:
+  label: Operating system
+  description: Which operating system are you using?
+  placeholder: "Ubuntu 24.04"
+  validations:
+  required: true
+
+* type: textarea
+  id: description
+  attributes:
+  label: Description
+  description: Describe the problem clearly and concisely.
+  placeholder: What happened?
+  validations:
+  required: true
+
+* type: textarea
+  id: reproduction
+  attributes:
+  label: Steps to reproduce
+  description: Provide the smallest set of steps or code needed to reproduce the problem.
+  placeholder: |
+  1. Configure ...
+  2. Run ...
+  3. Observe ...
+  validations:
+  required: true
+
+* type: textarea
+  id: expected
+  attributes:
+  label: Expected behavior
+  description: What did you expect to happen?
+  placeholder: Describe the expected behavior.
+  validations:
+  required: true
+
+* type: textarea
+  id: actual
+  attributes:
+  label: Actual behavior
+  description: What happened instead?
+  placeholder: Describe the actual behavior.
+  validations:
+  required: true
+
+* type: textarea
+  id: logs
+  attributes:
+  label: Relevant logs or traceback
+  description: Remove any secrets or sensitive information before submitting.
+  render: text
+
+* type: textarea
+  id: additional-context
+  attributes:
+  label: Additional context
+  description: Add any other information that may help investigate the issue.

@@ -2,11 +2,9 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   quality:
@@ -14,29 +12,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v6
+      - uses: astral-sh/setup-uv@v6
         with:
           version: "0.12.5"
           enable-cache: true
 
-      - name: Set up Python
-        run: uv python install 3.14
+      - run: uv python install 3.14
+      - run: uv sync --locked
+      - run: uv run pytest
+      - run: uv run ruff check .
+      - run: uv run ruff format --check .
+      - run: uv run pyright
 
-      - name: Install dependencies
-        run: uv sync --locked
-
-      - name: Run tests
-        run: uv run pytest
-
-      - name: Check linting
-        run: uv run ruff check .
-
-      - name: Check formatting
-        run: uv run ruff format --check .
-
-      - name: Run type checking
-        run: uv run pyright
+      - name: Build package
+        run: uv build

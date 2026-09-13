@@ -19,7 +19,7 @@ class TestConfigLoader:
     def test_load_valid_configuration(self, fixtures_path: Path) -> None:
         config_path = fixtures_path / "valid.yml"
 
-        loader = ConfigLoader(config_path)  # noqa: F821
+        loader = ConfigLoader(config_path)
 
         config = loader.load()
 
