@@ -113,12 +113,8 @@ yb-observability/
 │   ├── config/
 │   └── logging/
 │
-├── docs/
-│   ├── architecture/
-│   ├── configuration/
-│   └── logging/
-│
 ├── .github/
+│   ├── ISSUE_TEMPLATE/
 │   └── workflows/
 │
 ├── CHANGELOG.md
@@ -172,6 +168,12 @@ Run type checking:
 uv run pyright
 ```
 
+Build the package:
+
+```bash
+uv build
+```
+
 ## Contributing
 
 Contributions are welcome.
@@ -182,6 +184,7 @@ Before submitting a pull request, make sure that:
 * Ruff checks pass.
 * Formatting checks pass.
 * Pyright checks pass.
+* The package builds successfully.
 * New functionality includes appropriate tests.
 * Public API changes are documented.
 
