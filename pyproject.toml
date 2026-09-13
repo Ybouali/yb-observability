@@ -8,6 +8,7 @@ license = "MIT"
 authors = [
     { name = "Yassine Bouali" },
 ]
+
 keywords = [
     "configuration",
     "logging",
@@ -32,3 +33,18 @@ Homepage = "https://github.com/Ybouali/yb-observability"
 Repository = "https://github.com/Ybouali/yb-observability"
 Issues = "https://github.com/Ybouali/yb-observability/issues"
 Changelog = "https://github.com/Ybouali/yb-observability/blob/main/CHANGELOG.md"
+
+[dependency-groups]
+dev = [
+    "pyright>=1.1.414,<2.0.0",
+    "pytest>=9.1.1,<10.0.0",
+    "pytest-asyncio>=1.4.0,<2.0.0",
+    "ruff>=0.16.7,<1.0.0",
+]
+
+[build-system]
+requires = ["setuptools>=77.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

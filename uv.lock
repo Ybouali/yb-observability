@@ -204,8 +204,8 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "pyright", specifier = ">=1.1.411,<2.0.0" },
-    { name = "pytest", specifier = ">=8.0,<10.0" },
-    { name = "pytest-asyncio", specifier = ">=0.24,<2.0" },
-    { name = "ruff", specifier = ">=0.12,<1.0" },
+    { name = "pyright", specifier = ">=1.1.414,<2.0.0" },
+    { name = "pytest", specifier = ">=9.1.1,<10.0.0" },
+    { name = "pytest-asyncio", specifier = ">=1.4.0,<2.0.0" },
+    { name = "ruff", specifier = ">=0.16.7,<1.0.0" },
 ]
