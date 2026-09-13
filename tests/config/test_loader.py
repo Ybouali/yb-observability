@@ -2,12 +2,12 @@ from pathlib import Path
 
 import pytest
 
-from yb_observability.config.exceptions import (
+from yb_observability.config import (
     ConfigEnvironmentVariableError,
     ConfigFileNotFoundError,
+    ConfigLoader,
     ConfigLoaderError,
 )
-from yb_observability.config.loader import ConfigLoader
 
 
 @pytest.fixture

@@ -29,6 +29,8 @@ dev = [
 ]
 
 [tool.pyright]
+include = ["src", "tests"]
+extraPaths = ["src"]
 typeCheckingMode = "standard"
 
 [tool.pytest.ini_options]
