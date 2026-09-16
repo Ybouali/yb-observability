@@ -1,6 +1,6 @@
 [project]
 name = "yb-observability"
-version = "0.1.2"
+version = "0.2.0"
 description = "Reusable Python infrastructure for application configuration and observability."
 readme = "README.md"
 requires-python = ">=3.14,<3.15"
