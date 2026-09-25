@@ -3,7 +3,7 @@ from __future__ import annotations
 from os import getenv
 from pathlib import Path
 from re import Match, compile
-from typing import Any
+from typing import Any, cast
 
 from yaml import YAMLError, safe_load
 
@@ -65,10 +65,15 @@ class ConfigLoader:
         """Recursively resolve `${VAR}` inside string leaves."""
         if isinstance(node, str):
             return self._resolve_string(node)
+
         if isinstance(node, dict):
-            return {key: self._resolve_node(value) for key, value in node.items()}
+            mapping = cast(dict[Any, Any], node)
+            return {key: self._resolve_node(value) for key, value in mapping.items()}
+
         if isinstance(node, list):
-            return [self._resolve_node(item) for item in node]
+            items = cast(list[Any], node)
+            return [self._resolve_node(item) for item in items]
+
         return node
 
     @staticmethod
