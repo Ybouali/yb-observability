@@ -153,3 +153,26 @@ class TestConfigureLogging:
         logger.info("Path test")
 
         assert (log_directory / "ai").is_dir()
+
+
+def test_logger_public_import() -> None:
+    from yb_observability.logging import logger as public_logger
+
+    assert public_logger is logger
+
+
+def test_logger_manager_import_remains_compatible() -> None:
+    from yb_observability.logging import logger as public_logger
+    from yb_observability.logging.manager import logger as manager_logger
+
+    assert public_logger is manager_logger
+
+
+def test_logging_public_api() -> None:
+    from yb_observability.logging import (
+        configure_logging as public_configure_logging,
+    )
+    from yb_observability.logging import logger as public_logger
+
+    assert public_configure_logging is configure_logging
+    assert public_logger is logger
