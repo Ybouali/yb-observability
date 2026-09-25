@@ -1,7 +1,7 @@
 from os import getenv
 from pathlib import Path
 from re import Match, compile
-from typing import Any
+from typing import Any, cast
 
 from yaml import YAMLError, safe_load
 
@@ -52,7 +52,7 @@ class ConfigLoader:
                 "The root of the configuration file must be a YAML mapping."
             )
 
-        return config
+        return cast(dict[str, Any], config)
 
     @staticmethod
     def _resolve_environment_variables(content: str) -> str:
